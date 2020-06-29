@@ -26,3 +26,15 @@ http://kis.tu.kielce.pl/mo/COLORADO_FEM/colorado/IFEM.Ch31.pdf
 - The FIAT package has GLL function but only works for 1D.
 https://github.com/FEniCS/fiat/blob/master/FIAT/gauss_lobatto_legendre.py
 
+- In 2016 some people discussed about GLL in fenics FIAT. 
+https://bitbucket.org/fenics-project/fiat/issues/14/gauss-legendre-lobatto-points-used-for-the
+- (continued) David Ham write GLL and merged it into the master branch. And they disscussed about naming the function. So I think there exists a function to set the Lobatto points and a function to implement the Gauss-Lobatto quadrature.
+https://bitbucket.org/fenics-project/ufl/pull-requests/63/add-gl-and-gll-to-the-element-lists/diff
+
+- A paper. It mentioned some papers working on the mass-lamping elements. And it says in 2D cases we need to use ’tensorization’ of a 1D finite element, tensorized Gauss-Lobatto points combined with Lagrange Qk isoparametric elements.
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.405.7100&rep=rep1&type=pdf
+
+- The 74 and 76 page of this book talks about explicit method and lumping mass. But it only mentions 1D 1order case.
+http://people.cs.uchicago.edu/~ridg/scicomp17/iamuf.pdf
+
+
