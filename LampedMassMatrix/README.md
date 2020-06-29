@@ -4,6 +4,8 @@ When we try to use explicit propagation in FEniCS, we need to use lamped mass ma
 2. An anvanced way is to use Gauss-Lobatto points and compute the integral with Gauss-Lobatto quadrature. In this setting the mass matrix will automatically be diagonal (or approximately diagonal). This is what I am looking for. But how to apply it in FEniCS?
 3. Another way seems to be scalling. 
 
+Based on the references I found, there is no direct way to implement GLL on 2D quadrilateral meshes. But it shouldn't be too hard. I found a file 'quadrature_schemes.py' in FIAT, where it use 'ref_el.product' to deal with quadrilaterals. I guess it tensorize the 1D scheme. I need to check it and then the problem is reduced to finding GLL for 1D, which I think is already there.
+
 reference:
 - Three ways to lamp the mass matrix.
 https://scicomp.stackexchange.com/questions/19704/how-to-formulate-lumped-mass-matrix-in-fem/19714
