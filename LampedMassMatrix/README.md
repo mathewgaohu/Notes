@@ -1,7 +1,7 @@
 When we try to use explicit propagation in FEniCS, we need to use lamped mass matrix (diagonal matrix), otherwise we will always have to solve linear systems in each loop.
 
 1. An easiest way is summing the rows of the matrix. However it only works in P1 elements. (Though I don't understand why it works.)
-2. An beautiful way is to use Gauss-Lobatto points and compute the integral with Gauss-Lobatto quadrature. In this setting the mass matrix will automatically be diagonal (or approximately diagonal). This is what I am looking for. But how to apply it in FEniCS?
+2. An anvanced way is to use Gauss-Lobatto points and compute the integral with Gauss-Lobatto quadrature. In this setting the mass matrix will automatically be diagonal (or approximately diagonal). This is what I am looking for. But how to apply it in FEniCS?
 3. Another way seems to be scalling. 
 
 reference:
@@ -25,3 +25,4 @@ http://kis.tu.kielce.pl/mo/COLORADO_FEM/colorado/IFEM.Ch31.pdf
 
 - The FIAT package has GLL function but only works for 1D.
 https://github.com/FEniCS/fiat/blob/master/FIAT/gauss_lobatto_legendre.py
+
