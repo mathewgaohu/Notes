@@ -8,7 +8,7 @@ A = assemble(a).
 
 Here it is, how to apply Gauss-Lobatto quadrature in the assembling. 
 
-check the document of assemble, it accepts 
+I check the document of assemble, it accepts 
 form_compiler_parameters={'quadrature_scheme': 'vertex',
                                           'quadrature_degree': 1}).
 But nothing lead to the quadrature created by FIAT.
@@ -18,7 +18,7 @@ reference:
 - FIAT package has something called GLL FiniteElement, which is only for 1D. The question is I don't know how to use it even in 1D.
 https://github.com/FEniCS/fiat/blob/master/FIAT/gauss_lobatto_legendre.py
 
-- (continued) and a quadrature rule called Gll Quadrature.
+- (continued) and a quadrature rule called GLL Quadrature.
 https://github.com/FEniCS/fiat/blob/master/FIAT/quadrature.py
 
 - (continued) and here is a test for GLL. You can see how the functions are used.
