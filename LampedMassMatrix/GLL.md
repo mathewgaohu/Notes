@@ -39,7 +39,10 @@ https://fenicsproject.org/qa/655/question-about-quadratures-rules/
 - You can see FEniCS sources here. 
 https://bitbucket.org/fenics-project/
 
+- You can tensorize two finite elements.
+https://github.com/FEniCS/fiat/blob/master/FIAT/tensor_product.py
 
+- 
 
 
 
