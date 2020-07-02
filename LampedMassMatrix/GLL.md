@@ -42,7 +42,13 @@ https://bitbucket.org/fenics-project/
 - You can tensorize two finite elements.
 https://github.com/FEniCS/fiat/blob/master/FIAT/tensor_product.py
 
-- 
+- Look at the source code. 
+- UFL actually support GLL element. 
+https://bitbucket.org/fenics-project/ufl/src/master/ufl/finiteelement/elementlist.py
+- (continued) but when we build a function space. The error occurs since 'ffc' says it doesn't support 'GLL' family. We can see that 'fiat' supports GLL.
+https://bitbucket.org/fenics-project/ffc/src/master/ffc/fiatinterface.py
+- (continued) I changed 'ffc's supported list and then we can build the function space.
 
+- The next question is how to apply lobatto quadrature. The default scheme doesn't generate diagonal matrix.
 
 
