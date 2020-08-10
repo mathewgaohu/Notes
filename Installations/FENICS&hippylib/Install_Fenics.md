@@ -52,7 +52,9 @@ If you want to install some previous version, you can find the tag in [their web
 
 To open the files we first enter in the terminal:  
 
+```
 docker logs fenics  
+```
 
 Then you can find, at the bottom, the link and token you can use to open in a browser.
 
