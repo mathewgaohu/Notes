@@ -1,14 +1,10 @@
 First, install the FENICS.
 
-You can find multiple ways in the FEniCS website.
-
-https://fenicsproject.org/download/
+You can find multiple ways in the [FEniCS website](https://fenicsproject.org/download/)
 
 Here I share the 'docker' way with MacBook. 
 
-1. First download and install docker.
-
-https://www.docker.com/products/docker-desktop
+1. First download and install [docker](https://www.docker.com/products/docker-desktop)
 
 (Play with docker: you can enter 'docker' in terminal and you will find all commands that you can try.
 Some commands are useful, such as 'ps -a', 'rm', 'images', 'start', 'stop'.)
@@ -18,11 +14,15 @@ Some commands are useful, such as 'ps -a', 'rm', 'images', 'start', 'stop'.)
 
 The fenics website provided a code to install fencis.
 
+```
 docker run -ti -p 127.0.0.1:8000:8000 -v $(pwd):/home/fenics/shared -w /home/fenics/shared quay.io/fenicsproject/stable:current
+```
 
 But I recommend a better one, and I will explain it.
 
+```
 docker run --name fenics -w /home -v $(pwd):/home/Local quay.io/fenicsproject/stable -d -p 127.0.0.1:8888:8888 'jupyter-notebook --ip=0.0.0.0'
+```
 
 Explaination:
 
