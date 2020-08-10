@@ -6,7 +6,7 @@ It is quite easy to install hippylib with FEniCS installed in docker.
 
 2. Unzip it, and rename the folder as 'hippylib'.
 
-3. Copy the folder to the container with the docker cp command. First use cd to set pwd to the directory where hippylib lies. Then
+3. Copy the folder to the container with the `docker cp` command. First use `cd` to set `pwd` to the directory where hippylib lies. Then
 
 ```
 docker cp $(pwd)/hippylib /home/fenics
