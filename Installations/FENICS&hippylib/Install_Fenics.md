@@ -26,22 +26,22 @@ docker run --name fenics -w /home -v $(pwd):/home/Local quay.io/fenicsproject/st
 
 Explaination:
 
-(a) [run] it means you want to build a container.
+(a) `docker run` it means you want to build a container.
 
-(b) [--name fenics] it means the name of the container is fenics. Of course you can use other names as you like.
+(b) `--name fenics` it means the name of the container is fenics. Of course you can use other names as you like.
 
-(c) [-w /home] it means the working directory (the directory when you open jupyter) is /home. 
+(c) `-w /home` it means the working directory (the directory when you open jupyter) is `/home`. 
 I think it is better to set it as the root directory as I did, because then you can find all files in the container. 
 
-(d) [-v $(pwd):/home/Local] it mirrors you files in the (pwd) to the directory '/home/Local'. 
+(d) `-v $(pwd):/home/Local` it mirrors you files in the `$(pwd)` to the directory `/home/Local`. 
 It allows you to open local files in the container, in case when you want to have some external files run in the container. 
-Here '(pwd)' is your current path. You can change it with command 'cd'. 
-Here '/home/Local' wasn't there, so docker will create a folder named 'Local' in the directory '/home'.
+Here `$(pwd)` is your current path. You can change it with command `cd`. 
+Here `/home/Local` wasn't there, so docker will create a folder named 'Local' in the directory `/home`.
 
-(e) [quay.io/fenicsproject/stable] this is the image they provided online. 
-If you want to install some previous version, you can find the tag in the website quay.io/fenicsproject/ and use it by e.g. quay.io/fenicsproject/stable:2017.2.0
+(e) `quay.io/fenicsproject/stable` this is the image they provided online. 
+If you want to install some previous version, you can find the tag in [their website](quay.io/fenicsproject/) and use it by e.g. `quay.io/fenicsproject/stable:2017.2.0`
 
-(f) [-d] it means the container will run background.
+(f) `-d` it means the container will run background.
 
 (g) `-p 127.0.0.1:8888:8888` publish a container's port to the host. '127.0.0.1:8888' is your (host) port. '8888' is the container's port.
 
