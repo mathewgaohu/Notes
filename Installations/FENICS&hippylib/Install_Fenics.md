@@ -35,7 +35,7 @@ I think it is better to set it as the root directory as I did, because then you 
 
 (d) `-v $(pwd):/home/Local` it mirrors you files in the `$(pwd)` to the directory `/home/Local`. 
 It allows you to open local files in the container, in case when you want to have some external files run in the container. 
-Here `$(pwd)` is your current path. You can change it with command `cd`. 
+Here `$(pwd)` is your current path. You can change it with command `cd` before you create the container. 
 Here `/home/Local` wasn't there, so docker will create a folder named 'Local' in the directory `/home`.
 
 (e) `quay.io/fenicsproject/stable` this is the image they provided online. 
@@ -43,9 +43,9 @@ If you want to install some previous version, you can find the tag in [their web
 
 (f) `-d` it means the container will run background.
 
-(g) `-p 127.0.0.1:8888:8888` publish a container's port to the host. '127.0.0.1:8888' is your (host) port. '8888' is the container's port.
+(g) `-p 127.0.0.1:8888:8888` publish a container's port to the host. `127.0.0.1:8888` is your (host) port. `8888` is the container's port.
 
-(h) `jupyter-notebook --ip=0.0.0.0` this is to run the code inside quotes. So it will run jupyter-notebook.
+(h) `'jupyter-notebook --ip=0.0.0.0'` this is to run the code inside quotes. So it will run jupyter-notebook.
 
 
 3. Open Jupyter Notebook.
