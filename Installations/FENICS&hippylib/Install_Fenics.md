@@ -1,16 +1,16 @@
-First, install the FENICS.
+# Install FEniCS
 
 You can find multiple ways in the [FEniCS website](https://fenicsproject.org/download/)
 
 Here I share the 'docker' way with MacBook. 
 
-1. First download and install [docker](https://www.docker.com/products/docker-desktop)
+## 1. Download and install [docker](https://www.docker.com/products/docker-desktop)
 
 (Play with docker: you can enter 'docker' in terminal and you will find all commands that you can try.
 Some commands are useful, such as 'ps -a', 'rm', 'images', 'start', 'stop'.)
 
 
-2. Install fenics in docker.
+## 2. Install FEniCS in docker
 
 The fenics website provided a code to install fencis.
 
@@ -48,7 +48,7 @@ If you want to install some previous version, you can find the tag in [their web
 (h) `'jupyter-notebook --ip=0.0.0.0'` this is to run the code inside quotes. So it will run jupyter-notebook.
 
 
-3. Open Jupyter Notebook.
+## 3. Open FEniCS in Jupyter Notebook.
 
 To open the files we first enter in the terminal:  
 
