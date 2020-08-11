@@ -24,7 +24,7 @@ conda activate fenicsproject
 ```
 to open fenics, and use 
 ```
-conda deactivate fenicsproject
+conda deactivate
 ```
 to close it.
 
