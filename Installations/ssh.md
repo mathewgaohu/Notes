@@ -74,3 +74,7 @@ Host ccgo1
         User mathewhu
         ProxyJump login1
 ```
+Then I can ssh off campus without vpn by directly
+```
+ssh ccgo1
+```
