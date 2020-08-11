@@ -6,6 +6,7 @@ Here are some notes.
 * FEniCS & hippylib
 * Anaconda
 * docker
+* Singularity
 * Pycharm
 * Sublime text
 * VS Code
