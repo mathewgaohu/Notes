@@ -4,6 +4,7 @@ Here are some notes.
 # Content
 
 * FEniCS & hippylib
+* Anaconda
 * docker
 * Pycharm
 * Sublime text
