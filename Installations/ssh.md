@@ -59,3 +59,18 @@ Now I can get access by only
 ssh ccgo1
 ```
 
+### 3. ssh without vpn
+use Proxy Jump:
+```
+ssh -J mathewhu@login1.oden.utexas.edu mathewhu@ccgo1.oden.utexas.edu
+```
+Or, in the config file, add
+```
+Host login1
+        Hostname login1.oden.utexas.edu
+        User mathewhu
+Host ccgo1
+        Hostname ccgo1.oden.utexas.edu
+        User mathewhu
+        ProxyJump login1
+```
