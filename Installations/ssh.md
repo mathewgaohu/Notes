@@ -2,10 +2,10 @@
 
 ssh (Secure Shell).
 
-You use ssh to remotely login servers and execute commands. 
+We can use ssh to remotely login servers and execute commands. 
 So we can sit at home and ask the server at campus to run our codes.  
 
-## How to ssh ccgo or other hosts?
+## How to ssh ccgo (or other hosts)?
 
 ### Step 1: [vpn to campus](https://wikis.utexas.edu/display/BMEIT/Access+UT%27s+VPN)
 
@@ -15,7 +15,6 @@ So we can sit at home and ask the server at campus to run our codes.
 
 First you need to have Oden Institute usename. For example, mine is mathewhu.
 Then you need to know the host name you want to ssh. For example, ccgo host names are ccgo1 and ccgo2 (@oden.utexas.edu).
-
 
 Just run following command in the terminal.
 ```
@@ -27,12 +26,12 @@ ssh mathewhu@ccgo1.oden.utexas.edu
 ```
 When connecting to a server at the first time, it will ask you to confirm the server. 
 Once you confirm it, your computer will remember it and won't ask you again.
-Then it will ask for your password. It's the Oden Institute password. 
+Then it will ask for your password, which is the Oden Institute password. 
 Enter it and you are in. 
 
 ## Tips
 ### 1. passwordless login
-run this command in the terminal, 
+Run this command in the terminal, 
 ```
 ssh-keygen
 ```
@@ -44,7 +43,7 @@ ssh-copy-id -i ~/.ssh/id_rsa <user>@<host>.oden.utexas.edu
 You are all set. Now you can ssh to this server without password.
 
 ### 2. ssh config
-You can set the username and hostname in advance so you can ssh with short command. 
+We can set the username and hostname in advance, in order to ssh with a short command. 
 Generate a file from home directory 
 ```
 .ssh/config
