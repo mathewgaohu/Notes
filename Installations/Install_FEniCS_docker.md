@@ -13,9 +13,34 @@ Some commands are useful, such as 'ps -a', 'rm', 'images', 'start', 'stop'.)
 ## 2. Install FEniCS in docker
 The fenics website provided a code to install fencis.
 ```
-docker run -ti -p 127.0.0.1:8000:8000 -v $(pwd):/home/fenics/shared -w /home/fenics/shared quay.io/fenicsproject/stable:current
+docker run --name fenics -ti -p 127.0.0.1:8000:8000 -v $(pwd):/home/fenics/shared -w /home/fenics/shared quay.io/fenicsproject/stable:current
 ```
 This is a standard way to install FEniCS, and you can execute your python files easily. 
+
+Explaination:
+* `docker run` 
+it means you want to build a container.
+
+* `--name fenics` 
+it means the name of the container is fenics. Of course you can use other names as you like.
+
+* `-p 127.0.0.1:8000:8000` 
+publish a container's port to the host. 
+`127.0.0.1:8000` is your (host) port. `8000` is the container's port.
+When python plot something in the container, it will send the figure to its port `8000`, then you can view it in your browser with URL `127.0.0.1:8000`.
+
+* `-v $(pwd):/home/fenics/shared` 
+it mirrors you files in the `$(pwd)` to the directory `/home/fenics/shared`. 
+It allows you to open local files in the container, in case when you want to have some external files run in the container. 
+Here `$(pwd)` is your current path. You can change it with command `cd` before you create the container. 
+Here `/home/fenics/shared` is a directory in the container.
+
+* `-w /home/fenics/shared` 
+it means the working directory (the directory when you open jupyter) is `/home/fenics/shared`. 
+
+
+
+
 However it lacks a method to code and debug python.
 
 ## 2' Install FEniCS in docker together with Jupyter Notebook
