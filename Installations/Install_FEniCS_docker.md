@@ -69,17 +69,26 @@ python3 demo_poisson.py
 ```
 
 ### 2.3 Edit python files
+#### 2.3.1 python
 A basic way is to open python3 by 
 ```
 python3
 ```
 Remark: The current version of FEniCS only support `python3`, not `python`.
 
+#### 2.3.2 Jupyter Notebook
 You can also open a Jupyter Notebook
 ```
 jupyter notebook --ip=0.0.0.0 
 ```
 Then we can open Jupyter Notebook with the url shown in the terminal.
+
+#### 2.3.3 VS Code
+1. Install [VS Code](https://code.visualstudio.com/download).
+2. Install the [remote extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+3. At the left bar, click the 'Remote Explorer' and find the container, right-click and select 'Attach to Container'.
+It will start the container. You are in.
+4. At the left bar, click the 'Explorer' and click 'open folder', find your work folder. You are all set.
 
 QUESTION: Can we use other IDEs?
 
