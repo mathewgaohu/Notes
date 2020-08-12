@@ -135,10 +135,10 @@ We can add it to the container manually.
 
 3. Copy the folder to the container with the `docker cp` command. First use `cd` to set `pwd` to the directory where hippylib lies. Then
 ```
-docker cp $(pwd)/hippylib /home/fenics
+docker cp $(pwd)/hippylib fenics:/home/fenics
 ```
 
-It copies the folder hippylib into under the folder fenics in the container.
+It copies the folder `hippylib` into the container `fenics`, under the folder `/home/fenics`.
 
 You can find explainations [here](https://docs.docker.com/engine/reference/commandline/cp/)
 
