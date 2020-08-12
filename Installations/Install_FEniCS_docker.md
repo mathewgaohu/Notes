@@ -142,9 +142,9 @@ It copies the folder hippylib into under the folder fenics in the container.
 
 You can find explainations [here](https://docs.docker.com/engine/reference/commandline/cp/)
 
-4. When you run anything using hippylib, remember to include following codes to add hippylib to the path
+4. If you want to use the scripts there, remember to include following codes to add hippylib to the path
 ```python
-# To work with hippylib
+# To use scripts in hippylib folder
 import sys
 import os
 HIPPYLIB_BASE_DIR = "/home/fenics/hippylib"
