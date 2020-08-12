@@ -73,6 +73,7 @@ A basic way is to open python3 by
 ```
 python3
 ```
+Remark: The current version of FEniCS only support `python3`, not `python`.
 
 You can also open a Jupyter Notebook
 ```
@@ -115,13 +116,18 @@ Just use this in the terminal.
 ```
 docker run --name hippylib2017 -ti -p 127.0.0.1:8000:8000 -p 127.0.0.1:8888:8888 -v $(pwd):/home/fenics/shared -w /home/fenics hippylib/toms
 ```
-and we are all set. It support both `python` and `python3`.
+and we are all set. It support both `python` and `python3`. 
 
-### 3.2 
+### 3.2 Current Version
+In a FEniCS 2019.1.0.r3 container, we can install hippylib by 
+```
+pip install hippylib --user
+```
 
-### 3.1 Move files manually
-
-To install hippylib with FEniCS installed in docker. I move the files to the container.
+### 3.3 Move files manually
+In Tom's container, we can see an folder named hippylib, where there tutorials and scripts of the argorithms. 
+However when we install hippylib by `pip`, we cannot see this folder.
+We can add it to the container manually.
 
 1. Download the latest version [hippylib package](https://hippylib.github.io/download/)
 
@@ -145,4 +151,3 @@ HIPPYLIB_BASE_DIR = "/home/fenics/hippylib"
 sys.path.append( HIPPYLIB_BASE_DIR )
 from hippylib import *
 ```
-QUESTION: Can we avoid this?
