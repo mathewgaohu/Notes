@@ -38,36 +38,68 @@ Here `/home/fenics/shared` is a directory in the container.
 * `-w /home/fenics/shared` 
 it means the working directory (the directory when you open jupyter) is `/home/fenics/shared`. 
 
+* `quay.io/fenicsproject/stable:current`
+this is the image they provided online. 
+If you want to install some previous version, you can find the tag in [their website](quay.io/fenicsproject/) 
+and use it by, e.g., `quay.io/fenicsproject/stable:2017.2.0`
 
+### 2.1 Use FEniCS: Enter the container
+When you create the container, you will enter it. 
+You can use `pwd` and `ls` to check where you are. 
 
+You can exit the container by `exit` or `Ctrl+D`. It will stop the container.
 
-However it lacks a method to code and debug python.
+You can restart the container by `docker start fenics`. 
+The container will be started but you are not in yet. 
+You can enter the container by `docker attach fenics`. 
+If nothing shows, press the `space` key and it may show.
 
-## 2' Install FEniCS in docker together with Jupyter Notebook
-Another way is recommended
+### 2.2 Execute python files
+An example is enough. 
+In the container.
+```
+cd ~/demo/documented/poisson/python/
+python3 demo_poisson.py
+```
+
+### 2.3 Edit python files
+A basic way is to open python3 by 
+```
+python3
+```
+
+You can also open a Jupyter Notebook
+```
+jupyter notebook --ip=0.0.0.0 --port=8000
+```
+Explaination:
+* `--port=8000` 
+we have to include this option since the defaule port for jupyter notebook is `8888`, 
+but our connection to the container is via `127.0.0.1:8000:8000`.
+
+Now we can open Jupyter Notebook with the url shown in the terminal.
+
+QUESTION: Can we use other IDEs?
+
+## 2' Install FEniCS together with Jupyter Notebook
+Another way is recommended.
 ```
 docker run --name fenics-nb -d -p 127.0.0.1:8888:8888 -w /home -v $(pwd):/home/Local quay.io/fenicsproject/stable:current  'jupyter-notebook --ip=0.0.0.0'
 ```
+It is convenient if you only want to use Jupyter Notebook, and don't want to set the port of jupyter every time.
+To use it, just start the container and go to the url `127.0.0.1:8888` in your browser.
 
 Explaination:
-* `docker run` it means you want to build a container.
+* `-d` 
+it means the container will run background.
 
-* `--name fenics-nb` it means the name of the container is fenics. Of course you can use other names as you like.
+* `-w /home` 
+it means the working directory (the directory when you open jupyter) is `/home`. 
+I think it is better to set it as the parent directory as I did, because then you can separate your folder and fenics.
 
-* `-d` it means the container will run background.
-
-* `-p 127.0.0.1:8888:8888` publish a container's port to the host. `127.0.0.1:8888` is your (host) port. `8888` is the container's port.
-
-* `-w /home` it means the working directory (the directory when you open jupyter) is `/home`. 
-I think it is better to set it as the root directory as I did, because then you can find all files in the container. 
-
-* `-v $(pwd):/home/Local` it mirrors you files in the `$(pwd)` to the directory `/home/Local`. 
-It allows you to open local files in the container, in case when you want to have some external files run in the container. 
-Here `$(pwd)` is your current path. You can change it with command `cd` before you create the container. 
+* `-v $(pwd):/home/Local` 
+it mirrors you files in the `$(pwd)` to the directory `/home/Local`.  
 Here `/home/Local` wasn't there, so docker will create a folder named 'Local' in the directory `/home`.
-
-* `quay.io/fenicsproject/stable:current` this is the image they provided online. 
-If you want to install some previous version, you can find the tag in [their website](quay.io/fenicsproject/) and use it by e.g. `quay.io/fenicsproject/stable:2017.2.0`
 
 * `'jupyter-notebook --ip=0.0.0.0'` this is to run the code inside quotes. So it will open a jupyter-notebook.
 
@@ -82,7 +114,7 @@ Then you can find, at the bottom, the link and token you can use to open in a br
 
 ## 3. Install hippylib
 
-It is quite easy to install hippylib with FEniCS installed in docker.
+To install hippylib with FEniCS installed in docker. I move the files to the container.
 
 1. Download the latest version [hippylib package](https://hippylib.github.io/download/)
 
