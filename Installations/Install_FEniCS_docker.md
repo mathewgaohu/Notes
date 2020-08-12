@@ -115,7 +115,7 @@ Just use this in the terminal.
 ```
 docker run --name hippylib2017 -ti -p 127.0.0.1:8000:8000 -p 127.0.0.1:8888:8888 -v $(pwd):/home/fenics/shared -w /home/fenics hippylib/toms
 ```
-and we are all set.
+and we are all set. It support both `python` and `python3`.
 
 ### 3.2 
 
