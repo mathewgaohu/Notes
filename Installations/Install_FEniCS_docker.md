@@ -13,7 +13,7 @@ Some commands are useful, such as 'ps -a', 'rm', 'images', 'start', 'stop'.)
 ## 2. Install FEniCS in docker
 The fenics website provided a code to install fencis.
 ```
-docker run --name fenics -ti -p 127.0.0.1:8000:8000 -v $(pwd):/home/fenics/shared -w /home/fenics/shared quay.io/fenicsproject/stable:current
+docker run --name fenics -ti -p 127.0.0.1:8000:8000 -p 127.0.0.1:8888:8888 -v $(pwd):/home/fenics/shared -w /home/fenics quay.io/fenicsproject/stable:current
 ```
 This is a standard way to install FEniCS, and you can execute your python files easily. 
 
@@ -29,19 +29,25 @@ publish a container's port to the host.
 `127.0.0.1:8000` is your (host) port. `8000` is the container's port.
 When python plot something in the container, it will send the figure to its port `8000`, then you can view it in your browser with URL `127.0.0.1:8000`.
 
+* `-p 127.0.0.1:8888:8888`
+publish a container's port to the host. 
+`127.0.0.1:8888` is your (host) port. `8888` is the container's port, which is for Jupyter Notebook.
+
 * `-v $(pwd):/home/fenics/shared` 
 it mirrors you files in the `$(pwd)` to the directory `/home/fenics/shared`. 
 It allows you to open local files in the container, in case when you want to have some external files run in the container. 
 Here `$(pwd)` is your current path. You can change it with command `cd` before you create the container. 
 Here `/home/fenics/shared` is a directory in the container.
 
-* `-w /home/fenics/shared` 
-it means the working directory (the directory when you open jupyter) is `/home/fenics/shared`. 
+* `-w /home/fenics`
+it means the working directory (the directory when enter the container and when you open jupyter) is `/home/fenics`. 
 
 * `quay.io/fenicsproject/stable:current`
 this is the image they provided online. 
 If you want to install some previous version, you can find the tag in [their website](quay.io/fenicsproject/) 
-and use it by, e.g., `quay.io/fenicsproject/stable:2017.2.0`
+and use it by, e.g., `quay.io/fenicsproject/stable:2017.2.0`.
+The current version is `2019.1.0`. 
+I think it's better to specify the version because when they update, we may forget what version we have.
 
 ### 2.1 Use FEniCS: Enter the container
 When you create the container, you will enter it. 
@@ -70,14 +76,9 @@ python3
 
 You can also open a Jupyter Notebook
 ```
-jupyter notebook --ip=0.0.0.0 --port=8000
+jupyter notebook --ip=0.0.0.0 
 ```
-Explaination:
-* `--port=8000` 
-we have to include this option since the defaule port for jupyter notebook is `8888`, 
-but our connection to the container is via `127.0.0.1:8000:8000`.
-
-Now we can open Jupyter Notebook with the url shown in the terminal.
+Then we can open Jupyter Notebook with the url shown in the terminal.
 
 QUESTION: Can we use other IDEs?
 
@@ -93,15 +94,11 @@ Explaination:
 * `-d` 
 it means the container will run background.
 
-* `-w /home/fenics` 
-it means the working directory (the directory when you open jupyter) is `-w /home/fenics`. 
-I think it is better to set it as the parent directory as I did, because then you can view hippylib tutorials after you install hippylib.
-
 * `'jupyter-notebook --ip=0.0.0.0'` this is to run the code inside quotes. So it will open a jupyter-notebook.
 
 
 ### 2'.1 Open FEniCS in Jupyter Notebook.
-To open the files we first enter in the terminal:  
+To open the Jupyter Notebook we use:  
 ```
 docker logs fenics  
 ```
@@ -109,6 +106,20 @@ Then you can find, at the bottom, the link and token you can use to open in a br
 
 
 ## 3. Install hippylib
+[Here](https://hippylib.github.io/documentation/) is a documentation of hippylib.
+
+### 3.1 Fastest: Tom's container
+This is a built container which include FEniCS and hippylib. 
+The version is `hIPPYlib 2.3.0` and `FEniCS 2017.2.0`.
+Just use this in the terminal.
+```
+docker run --name hippylib2017 -ti -p 127.0.0.1:8000:8000 -p 127.0.0.1:8888:8888 -v $(pwd):/home/fenics/shared -w /home/fenics hippylib/toms
+```
+and we are all set.
+
+### 3.2 
+
+### 3.1 Move files manually
 
 To install hippylib with FEniCS installed in docker. I move the files to the container.
 
