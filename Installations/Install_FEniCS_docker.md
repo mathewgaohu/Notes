@@ -84,7 +84,7 @@ QUESTION: Can we use other IDEs?
 ## 2' Install FEniCS together with Jupyter Notebook
 Another way is recommended.
 ```
-docker run --name fenics-nb -d -p 127.0.0.1:8888:8888 -w /home -v $(pwd):/home/Local quay.io/fenicsproject/stable:current  'jupyter-notebook --ip=0.0.0.0'
+docker run --name fenics-nb -d -p 127.0.0.1:8888:8888 -v $(pwd):/home/fenics/shared -w /home/fenics quay.io/fenicsproject/stable:current  'jupyter-notebook --ip=0.0.0.0'
 ```
 It is convenient if you only want to use Jupyter Notebook, and don't want to set the port of jupyter every time.
 To use it, just start the container and go to the url `127.0.0.1:8888` in your browser.
@@ -93,13 +93,9 @@ Explaination:
 * `-d` 
 it means the container will run background.
 
-* `-w /home` 
-it means the working directory (the directory when you open jupyter) is `/home`. 
-I think it is better to set it as the parent directory as I did, because then you can separate your folder and fenics.
-
-* `-v $(pwd):/home/Local` 
-it mirrors you files in the `$(pwd)` to the directory `/home/Local`.  
-Here `/home/Local` wasn't there, so docker will create a folder named 'Local' in the directory `/home`.
+* `-w /home/fenics` 
+it means the working directory (the directory when you open jupyter) is `-w /home/fenics`. 
+I think it is better to set it as the parent directory as I did, because then you can view hippylib tutorials after you install hippylib.
 
 * `'jupyter-notebook --ip=0.0.0.0'` this is to run the code inside quotes. So it will open a jupyter-notebook.
 
