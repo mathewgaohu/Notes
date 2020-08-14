@@ -2,14 +2,20 @@
 
 First you need to ssh ccgo1.
 
+## 0. Rules
+* Create a directory under `/workspace`. Do not create any files or folders in the root directory.
+
 ## 1. To use conda
 ```
 source /workspace/anaconda3/etc/profile.d/conda.sh
-conda activate hippylib2019
+conda activate fenics
 ```
+
 You can also put the source command in your `.bashrc` file so it runs automatically when you ssh in. First do
 ```
 vim ~/.bashrc
 ```
-this file indicates the commands that you want to run when you log in. So, add the source command here. You are all set. 
+this file indicates the commands that you want to run when you log in. So, add the `source` command here. You are all set. 
+
+Even more you can add the `conda activate` command there. Then you will start will fenics environment when you log in .
 
