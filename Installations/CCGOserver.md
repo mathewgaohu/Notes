@@ -20,7 +20,7 @@ this file indicates the commands that you want to run when you log in. So, add t
 Even more you can add the `conda activate` command there. Then you will start will fenics environment when you log in .
 
 ## 2. To run faster
-use following three commands in terminal
+use following three commands in terminal (or write into `.bashrc`)
 ```
 export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
@@ -34,3 +34,19 @@ os.environ['OPENBLAS_NUM_THREADS'] = '1'
 os.environ['OPENMP_NUM_THREADS'] = '1'
 ```
 Don't know why. Just use it. 
+
+## 3. To use my package
+Just need to set the `PYTHONPATH`. Use the following command in terminal or write it into `.bashrc`
+```
+export PYTHONPATH=my/path
+```
+
+## 4. To run code without keeping connection
+```
+nohup python myfile.py > mylogfile.out &
+```
+Ctrl+c
+```
+cat mylogfile.out
+```
+
