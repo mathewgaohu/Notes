@@ -55,4 +55,7 @@ or
 ```
 jobs
 ```
-
+or
+```
+ps -ef | grep 'mathewhu'
+```
