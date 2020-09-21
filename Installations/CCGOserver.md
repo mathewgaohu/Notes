@@ -46,7 +46,13 @@ export PYTHONPATH=my/path
 nohup python myfile.py > mylogfile.out &
 ```
 Ctrl+c
+
+And to check you work
 ```
 cat mylogfile.out
+```
+or
+```
+jobs
 ```
 
