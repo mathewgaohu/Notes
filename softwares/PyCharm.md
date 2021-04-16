@@ -18,9 +18,15 @@ Click `...` under option 'Existing interpreter'. You have several choices.
 * Click `...` under option 'Existing server configuration'
 * Fill the informations ([how to configure ssh](https://github.com/ccgo-oden/users/blob/mathew/mathew/Notes/ssh.md))
 * Select remote folder
+
 Or you can do the same in preference setting.
+
+If the env variables are not import. See the ccgoServer note to edit `.bashrc`
 
 #### 2.1.2 Use Anaconda Interpreter
 To be written...
 
-If the env variables are not import. See the ccgoServer note to edit `.bashrc`
+### 2.2 Make Some Setting
+
+
+
