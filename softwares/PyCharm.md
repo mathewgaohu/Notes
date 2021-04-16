@@ -28,5 +28,15 @@ To be written...
 
 ### 2.2 Make Some Setting
 
+#### 2.2.1 Project Structure
+Preference - Project - Project Structure - Set sources folder (if need)
+
+#### 2.2.2 Interpreter
+Preference - Project - Project Interpreter (if need to change)
+
+#### 2.2.3 Git
+To be written
+
+
 
 
